@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🥗 Food & Nutrition | Healthy Lifestyle Magazine</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Hero */
+    .food-hero {
+      background: linear-gradient(135deg, #81c784, #4caf50);
+      text-align: center;
+      color: white;
+      padding: 3rem 1rem;
+      border-radius: 0 0 30px 30px;
+    }
+
+    /* Flip Cards */
+    .food-section {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+      padding: 2rem;
+    }
+    .flip-card {
+      perspective: 1000px;
+    }
+    .flip-card-inner {
+      position: relative;
+      width: 100%;
+      height: 250px;
+      text-align: center;
+      transition: transform 0.6s;
+      transform-style: preserve-3d;
+    }
+    .flip-card:hover .flip-card-inner {
+      transform: rotateY(180deg);
+    }
+    .flip-card-front,
+    .flip-card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      border-radius: 15px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      padding: 1rem;
+    }
+    .flip-card-front {
+      background: white;
+    }
+    .flip-card-back {
+      background: #f1f8e9;
+      transform: rotateY(180deg);
+    }
+    .flip-card img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      margin-bottom: 0.5rem;
+    }
+
+    /* Food Levels */
+    .levels {
+      padding: 2rem;
+    }
+    .level-bar {
+      margin: 1rem 0;
+    }
+    .level-bar span {
+      display: block;
+      margin-bottom: 0.3rem;
+    }
+    .bar {
+      height: 12px;
+      border-radius: 6px;
+      background: #eee;
+      overflow: hidden;
+    }
+    .bar-fill {
+      height: 100%;
+      text-align: right;
+      padding-right: 5px;
+      font-size: 0.7rem;
+      color: white;
+      border-radius: 6px;
+    }
+    .healthy { background: #4caf50; }
+    .good { background: #81c784; }
+    .moderate { background: #ffb74d; }
+    .unhealthy { background: #e53935; }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav>
+    <div class="logo">🌿 HealthyLife</div>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="articles.html">Articles</a></li>
+      <li><a href="food.html" class="active">Food</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <button id="darkModeBtn">🌙</button>
+  </nav>
+
+  <!-- Hero -->
+  <header class="food-hero">
+    <h1>🥗 Food & Nutrition</h1>
+    <p>Know what’s healthy ✅ and what’s harmful 🚫 for your body</p>
+  </header>
+
+  <!-- Best vs Junk Food -->
+  <main>
+    <h2 style="text-align:center; margin-top:1.5rem;">🍎 Best Foods vs 🚫 Junk Foods</h2>
+    <div class="food-section">
+      
+      <!-- Salad -->
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="https://source.unsplash.com/100x100/?salad" alt="Salad">
+            <h3>Salad</h3>
+            <p>Fresh & full of nutrients</p>
+          </div>
+          <div class="flip-card-back">
+            <h4>Benefits</h4>
+            <ul>
+              <li>Rich in vitamins</li>
+              <li>Boosts digestion</li>
+              <li>Controls weight</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Smoothie -->
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="https://source.unsplash.com/100x100/?smoothie" alt="Smoothie">
+            <h3>Smoothies</h3>
+            <p>Quick nutrition in a glass</p>
+          </div>
+          <div class="flip-card-back">
+            <h4>Benefits</h4>
+            <ul>
+              <li>Hydrates body</li>
+              <li>Boosts energy</li>
+              <li>Rich in fiber</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Junk Food -->
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="https://source.unsplash.com/100x100/?burger" alt="Burger">
+            <h3>Burgers</h3>
+            <p>Tasty but unhealthy</p>
+          </div>
+          <div class="flip-card-back">
+            <h4>Harmful Effects</h4>
+            <ul>
+              <li>High fat</li>
+              <li>Causes obesity</li>
+              <li>Bad for heart</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sugary Drinks -->
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="https://source.unsplash.com/100x100/?soda" alt="Soda">
+            <h3>Sugary Drinks</h3>
+            <p>Sweet but harmful</p>
+          </div>
+          <div class="flip-card-back">
+            <h4>Harmful Effects</h4>
+            <ul>
+              <li>Causes diabetes</li>
+              <li>Weakens teeth</li>
+              <li>Adds empty calories</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Food Levels -->
+    <section class="levels">
+      <h2>📊 Food Health Levels</h2>
+      <div class="level-bar">
+        <span>Fruits & Vegetables</span>
+        <div class="bar"><div class="bar-fill healthy" style="width:95%;">95%</div></div>
+      </div>
+      <div class="level-bar">
+        <span>Whole Grains</span>
+        <div class="bar"><div class="bar-fill good" style="width:85%;">85%</div></div>
+      </div>
+      <div class="level-bar">
+        <span>Nuts & Seeds</span>
+        <div class="bar"><div class="bar-fill good" style="width:80%;">80%</div></div>
+      </div>
+      <div class="level-bar">
+        <span>Lean Proteins</span>
+        <div class="bar"><div class="bar-fill good" style="width:75%;">75%</div></div>
+      </div>
+      <div class="level-bar">
+        <span>Fried Foods</span>
+        <div class="bar"><div class="bar-fill unhealthy" style="width:20%;">20%</div></div>
+      </div>
+      <div class="level-bar">
+        <span>Sugary Drinks</span>
+        <div class="bar"><div class="bar-fill unhealthy" style="width:10%;">10%</div></div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Healthy Lifestyle Magazine | Designed with ❤️</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
